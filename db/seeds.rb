@@ -7,3 +7,4 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # seed 1
+# seed 2
