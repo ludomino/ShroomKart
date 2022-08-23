@@ -1,77 +1,45 @@
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-    <h1>Shroom'Kart </h1>
-    </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<div class="main">
+  <%# <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e543acd9-ddf4-4351-9db4-e9fff7bf8039/d3kkphf-127ff150-e1f8-43a5-a13c-e9256ef74d50.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U1NDNhY2Q5LWRkZjQtNDM1MS05ZGI0LWU5ZmZmN2JmODAzOVwvZDNra3BoZi0xMjdmZjE1MC1lMWY4LTQzYTUtYTEzYy1lOTI1NmVmNzRkNTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.hJ7BBPiHl5OxMh-07GTEjuT5FiZt8slD6-eitVr9eGs" class="image-m img-fluid" alt="main"> %>
+  <div class="main-text">
+    <h2>Live Life at Full Throttle</h2>
+    <p>Rent our top performance karts to make your friends kiss your tread marks</p>
+  </div>
+</div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Messages</a>
-            </li>
-            <li class="nav-item dropdown">
-              <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" /> %>
-              <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-              </div> %>
-            <%# </li> %>
-            <!--li class="nav-item"-->
-            <!--/li-->
-        </ul>
-      </div>
-    </div>
-      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-outline-dark">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </form>
-  </div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our karts</h1>
+<%# <div class="container d-flex justify-content-center"> %>
+<div class="row d-flex justify-content-start">
+  <div class="info-1 d-flex align-items-center mt-5 p-0 col-7">
+    <img src="https://i.pinimg.com/originals/91/80/8f/91808f24586e46cffcbd62e09c190a54.jpg" alt="high quality karts">
+    <div class="info-text ms-2">
+      <h3>Premium karts</h3>
+      <p>We only rent the best product of the market so you can enjoy your ride on our top tier karts </p>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col">
-        <p>All <%= @karts.count %> karts.</p>
+</div>
+<div class="row d-flex justify-content-end">
+  <div class="info-2 d-flex align-items-center mt-5 p-0 col-7">
+    <img src="https://freepngimg.com/save/114310-wario-free-download-png-hd/500x500" alt="high quality karts">
+    <div class="info-text ms-2">
+      <h3>Quality control ⭐️</h3>
+      <p>Our professional and qualified renter crew will allow you to have the best ride of your life with safe and reliable vehicles </p>
     </div>
   </div>
-  <div class="row">
-    <% @karts.each do |kart| %>
-      <div class="col-md-4">
-        <div class="flat-card">
-          <div class="flat-card-image" style="background-image: url(<%= kart.image %>)"></div>
-          <div class="flat-card-content">
-            <div class="flat-card-title">
-              <h4><%= kart.name %></h4>
-            </div>
-            <div class="flex">
-              <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
-              </div>
-              <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= kart.price %></span>
-              </div>
-            </div>
-          </div>
-          <div class="flat-card-actions">
-            <%= link_to "More info", kart_path(kart) %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+</div>
+<div class="row d-flex justify-content-start">
+  <div class="info-1 d-flex align-items-center mt-5 p-0 col-7">
+    <img src="https://i.pinimg.com/originals/46/c4/04/46c4045d0fd4ed6b0432fcbbf5b7f673.jpg" alt="high quality karts">
+    <div class="info-text ms-2">
+      <h3>Rent from anywhere !</h3>
+      <p>Whe have official renter in the whole country so you can enjoy a little ride everywhere 🏎</p>
+    </div>
+  </div>
+</div>
+<div class="row d-flex justify-content-end">
+  <div class="info-2 d-flex align-items-center mt-5 p-0 col-7">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25247b92-6844-4fef-8ed8-5055cc35bf58/ddhgvls-762e90be-8b25-4dee-a2ea-a39be269aa1c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1MjQ3YjkyLTY4NDQtNGZlZi04ZWQ4LTUwNTVjYzM1YmY1OFwvZGRoZ3Zscy03NjJlOTBiZS04YjI1LTRkZWUtYTJlYS1hMzliZTI2OWFhMWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.AH8ZBAS-Szbc45rOw3Xgh0KSZJD7WwYtJtxROTPK7Og" alt="high quality karts">
+    <div class="info-text ms-2">
+      <h3>Assistance anytime anywhere 📞</h3>
+      <p>With our 24/7 assistance team we can help you whenever you have a problem with our services so that you can fully enjoy your ride</p>
+    </div>
+  </div>
 </div>
