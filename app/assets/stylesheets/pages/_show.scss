@@ -1,11 +1,29 @@
 h2 {
-color: #1EDD88;
-font-size: 20;
-font-weight: 500;
+  font-family: 'New Super Mario Font U', sans-serif;
+  color: black;
 }
 
 .fix-box {
   position: fixed;
-  top: 475px;
+  top: 83px;
   right: 50px;
 }
+
+.img {
+width : 500px;
+height : 500px;
+position: absolute;
+margin-left: auto;
+margin-right: auto;
+margin :0;
+transform: translate(+150%, +150%);
+}
+
+.image-show-kart {
+  width: 30%
+}
+
+// .card {
+//   background-image: url(image_tag @kart.image;
+
+// }

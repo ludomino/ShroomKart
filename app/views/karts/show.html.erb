@@ -1,5 +1,4 @@
-  <div class="container">
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <h1>Shroom'Kart </h1>
@@ -29,9 +28,14 @@
         </div>
       </div>
     </div>
-    <div class="col-3 fix-box">
+  <div class="container">
+
+    <div class="d-flex">
+      <div class="d-flex justify-content-center">
+        <%= image_tag @kart.image, class: "image-show-kart" %>
+      </div>
       <div class="flat-show-card">
-    
+
         <h2>Book my new Kart 🤩 !</h2>
 
         <form action="">
@@ -43,12 +47,18 @@
             <span class="input-group-text" id="end-date-label">To:</span>
             <input type="text" class="form-control" placeholder="01/01/2022" aria-label="end-date" aria-describedby="start-date-label">
           </div>
-<div class="input-group mt-2">
+          <div>
+          <div class="input-group mt-2">
+            <span class="input-group-text" id="mail-label" placeholder="example@mail.com">Email:</span>
+            <input type="text" class="form-control" placeholder="example@mail.com"
+          </div>
+          <div>
+            <div class="input-group mt-2">
             <span class="input-group-text" id="end-date-label"> Your message</span>
-            <input type="text" class="form-control" placeholder="Hello, ..."  >
+            <input type="text" class="form-control" placeholder="Hello, can i book...">
           </div>
           <%# <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%"> %>
-          <%= link_to "book ", kart_bookings_path(@kart)  %>
+          <%= link_to "book", kart_bookings_path(@kart)  %>
         </form>
       </div>
       <div class="flat-show-card">
@@ -74,4 +84,5 @@
         </div>
       </div>
     </div>
+
   </div>
