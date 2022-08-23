@@ -7,30 +7,26 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # require "open-uri"
 
-
-# puts "Cleaning database..."
+puts "Cleaning database..."
 Kart.destroy_all
-
-# [standard_kart, city_tripper, cat_cruiser, the_duke, yoshi_bike, gold_standard].each do |attributes|
-#   kart = Kart.create!(attributes)
-#   kart.image
-#   kart.name
-#   kart.price
-#   kart.special_skills
-# end
-# puts "Finished!"
-
-# Seed through API
+User.destroy_all
 
 # arr = User.all
 # user: arr.sample
+user_1 = User.create(name: "Mario", email: "mario@mail.com", password: "mario123")
+user_2 = User.create(name: "Peach", email: "peach@mail.com", password: "peach123")
+user_3 = User.create(name: "Donkey Kong", email: "donkey@mail.com", password: "donkey123")
+user_4 = User.create(name: "Yoshi", email: "yoshi@mail.com", password: "yoshi123")
+user_5 = User.create(name: "bowser", email: "bowser@mail.com", password: "bowser123")
 
-Kart.create(user: User.first, image: "url('app/assets/images/Mario.png')", name: "Standard Kart", price: "20€", special_skills: "drift" )
-Kart.create(user: User.first, image: "url('app/assets/images/Peach.jpeg')", name: "City tripper", price: "15€", special_skills: "mini turbo, grip water" )
-Kart.create(user: User.first, image: "url('app/assets/images/Donkey_Kong.png')", name: "Cat Cruiser", price: "30€", special_skills: "ground, anti -gravity")
-Kart.create(user: User.first, image: "url('app/assets/images/YoshiKart.jpeg')", name: "Yoshi Bike", price: "35€", special_skills: "drift, speed, hability")
-Kart.create(user: User.first, image: "url('app/assets/images/Bowser.png')", name: "The Duke", price: "40€", special_skills: "fly, acceleration, speed")
+Kart.create(user: user_1, image: "https://mario.wiki.gallery/images/thumb/a/a0/MK8_Mario_Drifting_Standard_Kart_Shadowless_Artwork.png/1600px-MK8_Mario_Drifting_Standard_Kart_Shadowless_Artwork.png", name: "Standard Kart", price: "20€", special_skills: "drift" )
+Kart.create(user: user_2, image: "https://mario.wiki.gallery/images/b/bf/Peach_artwork_alt.png", name: "City tripper", price: "15€", special_skills: "mini turbo, grip water" )
+Kart.create(user: user_3, image: "https://mario.wiki.gallery/images/thumb/f/f6/Donkey_Kong_Artwork_-_Mario_Kart_8.png/1200px-Donkey_Kong_Artwork_-_Mario_Kart_8.png", name: "Cat Cruiser", price: "30€", special_skills: "ground, anti -gravity")
+Kart.create(user: user_4, image: "https://mario.wiki.gallery/images/thumb/e/ee/Yoshi_Artwork_%28alt%29_-_Mario_Kart_8.png/1600px-Yoshi_Artwork_%28alt%29_-_Mario_Kart_8.png", name: "Yoshi Bike", price: "35€", special_skills: "drift, speed, hability")
+Kart.create(user: user_5, image: "https://mario.wiki.gallery/images/thumb/d/d9/Bowser_Artwork_-_Mario_Kart_8.png/1200px-Bowser_Artwork_-_Mario_Kart_8.png", name: "The Duke", price: "40€", special_skills: "fly, acceleration, speed")
 
+puts "DB created"
+# Seed through API
 # response = URI.open('https://mario-kart-tour-api.herokuapp.com/api/v1/karts').read
 
 # JSON.parse(response).first(1).each do |kart|
