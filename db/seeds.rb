@@ -8,6 +8,7 @@
 # require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
 Kart.destroy_all
 User.destroy_all
 
@@ -29,6 +30,11 @@ puts "DB created"
 # Seed through API
 # response = URI.open('https://mario-kart-tour-api.herokuapp.com/api/v1/karts').read
 
+20.times do
+  booking = Booking.new(user: User.all.sample, kart: Kart.all.sample, start_date: "2022/08/22", end_date: "2022/08/27")
+  p booking.valid?
+  booking.save
+end
 # JSON.parse(response).first(1).each do |kart|
 #   # kart = Kart.new(User: User.all.sample)
 #   data = kart.reject { |key, value| !Kart.column_names.include?(key) }
