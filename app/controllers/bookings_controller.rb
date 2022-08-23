@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.kart = @karts
     if @booking.save
-      redirect_to kart_path(@user)
+      redirect_to kart_path(@kart)
     else
       render :new
     end
