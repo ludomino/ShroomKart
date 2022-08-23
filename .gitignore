@@ -37,6 +37,7 @@
 # Ignore .env file containing credentials.
 .env*
 echo '.env*
+CLOUDINARY_URL=cloudinary://298522699261255:Qa1ZfO4syfbOC-***********************8
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
