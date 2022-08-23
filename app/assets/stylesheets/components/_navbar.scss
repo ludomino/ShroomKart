@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  // justify-content: space-between;
   background-image: url(https://cutewallpaper.org/21/mario-kart-background/GalleryMario-Kart-8-Deluxe-Super-Mario-Wiki-the-Mario-.jpg);
   color: white;
   margin: 0px
@@ -41,13 +41,15 @@
   bottom: 8px;
   right: 8px;
   border-radius: 25px;
+  padding: 0 15px;
+
 }
 
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
-  height: 51px;
+  height: 43px;
   border-radius: 25px;
 
 
