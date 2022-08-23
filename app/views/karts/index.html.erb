@@ -1,38 +1,26 @@
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our karts</h1>
-    </div>
-  </div>
+  <h1>All our karts</h1>
 
-  <div class="row">
-    <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @kart.count %> karts out of our <%= Kart.count %> on our website.</p>
-      <% else %>
-        <p>All <%= @karts.count %> karts.</p>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
+  <% if @query %>
+    <h2>You searched for <strong><%= @query %></strong>. We found <%= @kart.count %> karts out of our <%= Kart.count %> on our website.</h2>
+  <% else %>
+    <h2>All <%= @karts.count %> karts.</h2>
+  <% end %>
+
+  <div class="cards">
     <% @karts.each do |kart| %>
-      <div class="col-md-4">
-        <div class="flat-card">
-          <div class="flat-card-image" style="background-image: url('<%= kart.image %>')"></div>
-          <div class="flat-card-content">
-            <div class="flat-card-title">
-              <h4><%= link_to kart.name, kart_path(kart) %></h4>
-            </div>
-            <div class="flex">
-              <p><%= kart.special_skills%></p>
-              <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= kart.price %></span>
-              </div>
-            </div>
-          </div>
+      <div class="card-trip">
+        <%= image_tag kart.image %>
+        <div class="card-trip-infos">
+        <div>
+          <h2><%= link_to kart.name, kart_path(kart) %></h2>
+          <p><%= kart.special_skills%></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= kart.price %> €</h2>
+        <%# <h2>= kart.user.name</h2> %>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>
