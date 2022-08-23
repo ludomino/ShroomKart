@@ -18,7 +18,7 @@
     <% @karts.each do |kart| %>
       <div class="col-md-4">
         <div class="flat-card">
-          <div class="flat-card-image" style="background-image: url('<%= kart.image %>')"></div>
+          <div class="flat-card-image" style="background-image: <%= kart.image %>;"></div>
           <div class="flat-card-content">
             <div class="flat-card-title">
               <h4><%= link_to kart.name, kart_path(kart) %></h4>

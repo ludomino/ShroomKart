@@ -9,6 +9,7 @@
 
 puts "Cleaning database..."
 Kart.destroy_all
+User.destroy_all
 
 # arr = User.all
 # user: arr.sample
@@ -18,12 +19,13 @@ user_3 = User.create(name: "Donkey Kong", email: "donkey@mail.com", password: "d
 user_4 = User.create(name: "Yoshi", email: "yoshi@mail.com", password: "yoshi123")
 user_5 = User.create(name: "bowser", email: "bowser@mail.com", password: "bowser123")
 
-Kart.create(user: user_1, image: "url('app/assets/images/Mario.png')", name: "Standard Kart", price: "20€", special_skills: "drift" )
-Kart.create(user: user_2, image: "url('app/assets/images/Peach.jpeg')", name: "City tripper", price: "15€", special_skills: "mini turbo, grip water" )
-Kart.create(user: user_3, image: "url('app/assets/images/Donkey_Kong.png')", name: "Cat Cruiser", price: "30€", special_skills: "ground, anti -gravity")
-Kart.create(user: user_4, image: "url('app/assets/images/YoshiKart.jpeg')", name: "Yoshi Bike", price: "35€", special_skills: "drift, speed, hability")
+Kart.create(user: user_1, image: "/assets/images/Mario.png", name: "Standard Kart", price: "20€", special_skills: "drift" )
+Kart.create(user: user_2, image: "url('./assets/images/Peach.jpeg')", name: "City tripper", price: "15€", special_skills: "mini turbo, grip water" )
+Kart.create(user: user_3, image: "url('../../assets/images/Donkey_Kong.png')", name: "Cat Cruiser", price: "30€", special_skills: "ground, anti -gravity")
+Kart.create(user: user_4, image: "url('../assets/images/YoshiKart.jpeg')", name: "Yoshi Bike", price: "35€", special_skills: "drift, speed, hability")
 Kart.create(user: user_5, image: "url('app/assets/images/Bowser.png')", name: "The Duke", price: "40€", special_skills: "fly, acceleration, speed")
 
+puts "DB created"
 # Seed through API
 # response = URI.open('https://mario-kart-tour-api.herokuapp.com/api/v1/karts').read
 
