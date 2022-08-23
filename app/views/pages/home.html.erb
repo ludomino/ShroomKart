@@ -1,4 +1,3 @@
-
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -38,5 +37,47 @@
         </div>
       </form>
   </div>
-<div class="container">
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our karts</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @kart.count %> karts out of our <%= Kart.count %> on our website.</p>
+      <% else %>
+        <p>All <%= karts.count %> karts.</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <% @karts.kart_id.each do |kart| %>
+      <div class="col-md-4">
+        <div class="flat-card">
+          <div class="flat-card-image" style="background-image: url('<%= kart.image %>')"></div>
+          <div class="flat-card-content">
+            <div class="flat-card-title">
+              <h4><%= kart.name %></h4>
+            </div>
+            <p><%= kart.address %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= flat.number_of_guests %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= kart.price %></span>
+              </div>
+            </div>
+          </div>
+          <div class="flat-card-actions">
+            <%= link_to "More info", kart_path(kart) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
 </div>
