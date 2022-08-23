@@ -1,21 +1,58 @@
-   <div class="col-4">
+  <div class="container">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <h1>Shroom'Kart </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Messages</a>
+              </li>
+              <li class="nav-item dropdown">
+                <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" /> %>
+                <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+                </div> %>
+              <%# </li> %>
+              <!--li class="nav-item"-->
+              <!--/li-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-3 fix-box">
       <div class="flat-show-card">
-        <h5>Book this Kart!</h5>
+    
+        <h2>Book my new Kart 🤩 !</h2>
 
         <form action="">
           <div class="input-group">
             <span class="input-group-text" id="start-date-label">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+            <input type="text" class="form-control" placeholder="01/01/2022" aria-label="start-date" aria-describedby="start-date-label">
           </div>
           <div class="input-group mt-2">
             <span class="input-group-text" id="end-date-label">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+            <input type="text" class="form-control" placeholder="01/01/2022" aria-label="end-date" aria-describedby="start-date-label">
           </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+<div class="input-group mt-2">
+            <span class="input-group-text" id="end-date-label"> Your message</span>
+            <input type="text" class="form-control" placeholder="Hello, ..."  >
+          </div>
+          <%# <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%"> %>
+          <%= link_to "book ", kart_bookings_path(@kart)  %>
         </form>
       </div>
       <div class="flat-show-card">
-        <h3>Details</h3>
+        <h3>Details</h5>
         <div class="flex">
           <div class="flex">
             <%= @kart.special_skills %>
@@ -38,4 +75,3 @@
       </div>
     </div>
   </div>
-</div>

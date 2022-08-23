@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   def show
     @kart = Kart.find(params[:id])
-    @bookings = Booking.new
+    @booking = Booking.new
   end
 
   def create
