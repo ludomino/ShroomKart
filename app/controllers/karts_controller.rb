@@ -29,11 +29,11 @@ class KartsController < ApplicationController
 
   private
 
-  def set_karts
+  def set_kart
     @kart = Kart.find(params[:id])
   end
 
   def kart_params
-    params.require(:kart).permit(:name, :photo)
+    params.require(:kart).permit(:image, :name, :special_skills, :price)
   end
 end
