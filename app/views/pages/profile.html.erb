@@ -1,5 +1,5 @@
 <h2><%= @user.name %></h2>
-
+<%= image_tag @user.photo %>
 
 
 
@@ -12,8 +12,8 @@
           <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id) %></h2>
           <p><%= booking.kart.special_skills%></p>
         </div>
-        <h2 class="card-trip-pricing"><%= booking.start_date %></h2>
-        <h2><%= booking.end_date %></h2>
+        <h2 class="card-trip-pricing"><%= booking.start_dates %></h2>
+        <h2><%= booking.end_dates %></h2>
       </div>
     </div>
   <% end %>
