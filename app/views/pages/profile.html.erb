@@ -13,6 +13,7 @@
           <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id) %></h2>
           <p><%= booking.kart.special_skills%></p>
         </div>
+        <img class="card-trip-user avatar-bordered" <%= image_tag booking.kart.user.photo %>
         <h2 class="card-trip-pricing"><%= booking.start_dates %></h2>
         <h2><%= booking.end_dates %></h2>
       </div>
