@@ -5,8 +5,7 @@ class KartsController < ApplicationController
   end
 
   def show
-    @bookings = Booking.new
-    @kart = Kart.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
