@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: :destroy
-  before_action :set_list, only: [:new, :create]
 
   def show
     @kart = Kart.find(params[:id])
@@ -8,12 +7,20 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @kart = Kart.find(params[:kart_id])
     @booking = Booking.new(booking_params)
-    @booking.kart = @karts
+    @booking.kart = @kart
+    @booking.user = current_user
+
+    @booking.save!
     if @booking.save
-      redirect_to kart_path(@kart)
-    else
-      render :new
+      redirect_to profile_path
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_dates, :end_dates)
   end
 end
