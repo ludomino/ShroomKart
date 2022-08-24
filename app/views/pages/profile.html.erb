@@ -9,7 +9,7 @@
       <%= image_tag booking.kart.image %>
       <div class="card-trip-infos">
         <div>
-          <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id) %></h2>
+          <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id), class:"link" %></h2>
           <p><%= booking.kart.special_skills%></p>
         </div>
         <h2 class="card-trip-pricing"><%= booking.start_date %></h2>
