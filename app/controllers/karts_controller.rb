@@ -2,11 +2,11 @@ class KartsController < ApplicationController
   before_action :set_kart, only: [:show, :destroy]
   def index
     @karts = Kart.all
+    @user = current_user
   end
 
   def show
-    @bookings = Booking.new
-    @kart = Kart.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

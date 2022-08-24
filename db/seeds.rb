@@ -14,11 +14,11 @@ User.destroy_all
 
 # arr = User.all
 # user: arr.sample
-user_1 = User.create(name: "Mario", email: "mario@mail.com", password: "mario123")
-user_2 = User.create(name: "Peach", email: "peach@mail.com", password: "peach123")
-user_3 = User.create(name: "Donkey Kong", email: "donkey@mail.com", password: "donkey123")
-user_4 = User.create(name: "Yoshi", email: "yoshi@mail.com", password: "yoshi123")
-user_5 = User.create(name: "bowser", email: "bowser@mail.com", password: "bowser123")
+user_1 = User.create(photo: "https://mario.wiki.gallery/images/d/d9/MK8_Mario_Icon.png", name: "Mario", email: "mario@mail.com", password: "mario123")
+user_2 = User.create(photo: "https://mario.wiki.gallery/images/c/c2/MK8_Peach_Icon.png", name: "Peach", email: "peach@mail.com", password: "peach123")
+user_3 = User.create(photo: "https://mario.wiki.gallery/images/0/08/MK8_DKong_Icon.png", name: "Donkey Kong", email: "donkey@mail.com", password: "donkey123")
+user_4 = User.create(photo: "https://mario.wiki.gallery/images/9/91/MK8_Yoshi_Icon.png", name: "Yoshi", email: "yoshi@mail.com", password: "yoshi123")
+user_5 = User.create(photo: "https://mario.wiki.gallery/images/4/47/MK8_Bowser_Icon.png", name: "bowser", email: "bowser@mail.com", password: "bowser123")
 
 Kart.create(user: user_1, image: "https://mario.wiki.gallery/images/thumb/a/a0/MK8_Mario_Drifting_Standard_Kart_Shadowless_Artwork.png/1600px-MK8_Mario_Drifting_Standard_Kart_Shadowless_Artwork.png", name: "Standard Kart", price: "20€", special_skills: "drift" )
 Kart.create(user: user_2, image: "https://mario.wiki.gallery/images/b/bf/Peach_artwork_alt.png", name: "City tripper", price: "15€", special_skills: "mini turbo, grip water" )
