@@ -12,12 +12,13 @@
       <div class="card-trip">
         <%= image_tag kart.image %>
         <div class="card-trip-infos">
-        <div>
-          <h2><%= link_to kart.name, kart_path(kart) %></h2>
-          <p><%= kart.special_skills%></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= kart.price %> €</h2>
-        <%# <h2>= kart.user.name</h2> %>
+          <div>
+            <h2><%= link_to kart.name, kart_path(kart) %></h2>
+            <p><%= kart.special_skills%></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= kart.price %> €</h2>
+          <%# <h2>= kart.user.name</h2> %>
+          <img class="card-trip-user avatar-bordered" <%= image_tag kart.user.photo %>
         </div>
       </div>
     <% end %>
