@@ -1,5 +1,4 @@
 <div class="container mt-3">
-  <h1>All our karts</h1>
 
   <% if @query %>
     <h2>You searched for <strong><%= @query %></strong>. We found <%= @kart.count %> karts out of our <%= Kart.count %> on our website.</h2>
@@ -17,7 +16,7 @@
           <p><%= kart.special_skills%></p>
         </div>
         <h2 class="card-trip-pricing"><%= kart.price %> €</h2>
-        <img class="card-trip-user avatar-bordered" <%= image_tag kart.user.photo %>
+        <%= image_tag kart.user.photo, class: "card-trip-user avatar-bordered" %>
         </div>
       </div>
     <% end %>
