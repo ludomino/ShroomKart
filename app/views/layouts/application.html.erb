@@ -10,13 +10,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-
   <body cz-shortcut-listen="true" style="background-image: url(https://catwithmonocle.com/wp-content/uploads/2019/08/featured-mariokarttour-tile-white.jpg);;">
-    <%= render "shared/navbar" %>
 
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render "shared/footer" %>
+    <div class="wrapper" >
+      <%= render "shared/navbar" %>
+
+      <%= yield %>
+      <%= render "shared/flashes" %>
+
+    </div>
+      <%= render "shared/footer" %>
   </body>
 </html>
