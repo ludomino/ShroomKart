@@ -2,6 +2,10 @@ h1 {
   font-family: 'New Super Mario Font U', sans-serif;
   color: rgb(255, 255, 255);
 }
+h1:hover{
+  span { color: red; }
+}
+
 // .body {background-image: url(https://catwithmonocle.com/wp-content/uploads/2019/08/featured-mariokarttour-tile-white.jpg);}
 .container {
   // background-image: url(https://catwithmonocle.com/wp-content/uploads/2019/08/featured-mariokarttour-tile-white.jpg);
@@ -49,6 +53,7 @@ h1 {
 .main h2 {
   font-family: 'New Super Mario Font U', sans-serif;
   text-shadow: 0px 5px 6px #030303;
+  color: white;
 }
 
 .info-1 {
