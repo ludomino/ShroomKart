@@ -7,7 +7,12 @@
 
 .shroom {
   color: white;
+
 }
+h1 {
+  color: red($color: #ff0000);
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -15,14 +20,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
+.navbar-brand {
+  color: red($color: #ff0000);
+}
 .nav-link {
   color: white;
   font-family: 'New Super Mario Font U', sans-serif;
   font-size: 20px;
 }
 .nav-link:hover {
-  color: rgb(124, 113, 113);
+  color: rgb(252, 2, 2);
 }
 
 

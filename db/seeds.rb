@@ -31,7 +31,7 @@ puts "DB created"
 # response = URI.open('https://mario-kart-tour-api.herokuapp.com/api/v1/karts').read
 
 20.times do
-  booking = Booking.new(user: User.all.sample, kart: Kart.all.sample, start_date: "2022/08/22", end_date: "2022/08/27")
+  booking = Booking.new(user: User.all.sample, kart: Kart.all.sample, start_dates: "2022/08/22", end_dates: "2022/08/27")
   p booking.valid?
   booking.save
 end

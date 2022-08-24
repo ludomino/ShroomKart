@@ -40,6 +40,13 @@
   width: 40px;
 }
 
+.link {
+  color: rgb(0, 0, 0);
+}
+.link:hover {
+  color: black;
+  text-decoration-color: #ff0000;
+}
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
