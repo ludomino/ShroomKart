@@ -10,6 +10,7 @@
   <% @bookings.each do |booking| %>
     <div class="card-trip">
       <%= image_tag booking.kart.image %>
+      <p><%= kart.special_skills%></p>
       <div class="card-trip-infos">
         <div>
           <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id), class:"link" %></h2>
