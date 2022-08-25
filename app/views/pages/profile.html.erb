@@ -5,11 +5,11 @@
       <% end %>
       <h2><%= @user.name %></h2>
     </div>
-  <%= link_to "Rent your own kart", new_kart_path, class: "btn btn-flat" %>
+
   <h2>All my bookings</h2>
 
 <div class="cards">
-  <% @bookings.each do |booking| %>
+  <% @bookings.order(created_at: :desc).each do |booking| %>
     <div class="card-trip">
       <%= image_tag booking.kart.image %>
       <div class="card-trip-infos">
@@ -18,8 +18,8 @@
           <p><%= booking.kart.special_skills%></p>
         </div>
           <%= image_tag booking.kart.user.photo, class: "card-trip-user avatar-bordered" %>
-          <p class="card-trip-pricing">Start: <%= booking.start_dates %></p>
-          <p> End : <%= booking.end_dates %></p>
+          <p class="card-trip-pricing">Start: <%= booking.start_dates.strftime("%d/%m/%y") %></p>
+          <p> End : <%= booking.end_dates.strftime("%d/%m/%y") %></p>
           <p> Total price : <%= booking.kart.price %>€</p>
         </div>
       </div>
