@@ -1,3 +1,5 @@
+ <link rel="stylesheet" href="_show.scss" />
+
   <div class="container">
 
     <div class="d-flex mt-5">
@@ -10,35 +12,39 @@
 
         <h2>Book my new Kart 🤩 !</h2>
 
-          <%= simple_form_for [@kart, @booking] do |f| %>
-           <%=  f.input :start_dates, as: :date %>
-           <%=  f.input :end_dates, as: :date %>
-            <%= f.submit "Book" %>
-
-          <% end %>
-      </div>
-      <%# <div class="flat-show-card"> %>
-        <%# <h3>Details</h5> %>
-        <%# <div class="flex"> %>
-          <%# <div class="flex"> %>
-            <%# <%= @kart.special_skills %>
-          <%# </div> %>
-          <div class="flex ms-3">
-            <p class="price"><%= @kart.price %>€</p>
-          </div>
+        <div class="price flex">
+          <%= @kart.price %>€
         </div>
-      </div>
-      <div class="flat-show-card">
-        <div class="flex-align">
-          <%# <h6 class="no-mb">Share</h6> %>
-
-        </div>
+        <%= simple_form_for [@kart, @booking],
+                            html: {
+                              data: {
+                                controller: 'flatpickr'
+                              }
+                            } do |f| %>
+          <%=  f.input :start_dates,
+                        as: :string,
+                        input_html: {
+                          data: {
+                              flatpickr_target: 'start_dates',
+                          }
+                        } %>
+          <%=  f.input :end_dates,
+                        as: :string,
+                        wrapper_html: { class: 'd-none' },
+                        input_html: {
+                            data: {
+                              flatpickr_target: 'end_dates'
+                        }
+                      } %>
+          <label for="story">Book message:</label>
+          <textarea id="story" name="story">
+            </textarea>
+              <%= f.submit "Book" ,  class: "w-100 btn btn-dark mt-3" %>
+              <% end %>
       </div>
     </div>
-
     <div>
       <h2> <%= @kart.name %> </h2>
       <p> Special Skills : <%= @kart.special_skills %> </p>
     </div>
-
   </div>
