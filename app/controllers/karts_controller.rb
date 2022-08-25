@@ -1,7 +1,11 @@
 class KartsController < ApplicationController
   before_action :set_kart, only: [:show, :destroy]
   def index
-    @karts = Kart.all
+    if params[:query].present?
+      @karts = Kart.global_search(params[:query])
+    else
+      @karts = Kart.all
+    end
     @user = current_user
   end
 
@@ -16,7 +20,7 @@ class KartsController < ApplicationController
   def create
     @kart = Kart.new(kart_params)
     if @kart.save
-      redirect_to kart_path(@kart)
+      redirect_to karts_path(@kart)
     else
       render :new, status: :unprocessable_entity
     end
