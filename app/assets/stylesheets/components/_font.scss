@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'superfont';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.cdnfonts.com/s/32226/New Super Mario Font U.woff') format('woff');
+}
+
+
 h1 {
-  font-family: 'New Super Mario Font U', sans-serif;
+  font-family: 'superfont';
   color: rgb(255, 255, 255);
 }
 h1:hover{
@@ -19,7 +27,7 @@ h1:hover{
 }
 
 .main {
-  font-family: 'New Super Mario Font U', sans-serif;
+  font-family: 'superfont';
   color: white;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(https://media.timeout.com/images/105667610/image.jpg);
   // opacity: 0.7;
@@ -51,7 +59,7 @@ h1:hover{
   text-shadow: 0px 5px 6px #030303;
 }
 .main h2 {
-  font-family: 'New Super Mario Font U', sans-serif;
+  font-family: 'superfont';
   text-shadow: 0px 5px 6px #030303;
   color: white;
 }
@@ -93,13 +101,13 @@ h1:hover{
 }
 
 .info-text {
-  font-family: 'New Super Mario Font U', sans-serif;
+  font-family: 'superfont';
   font-size: 15px;
 
 }
 
 .info-text h3 {
-  font-family: 'New Super Mario Font U', sans-serif;
+  font-family: 'superfont';
   font-size: 25px;
 
 }

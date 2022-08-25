@@ -8,21 +8,71 @@
       </button>
       <form novalidate="novalidate" class="simple_form search" action="/karts" accept-charset="UTF-8" method="get">
         <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-outline-dark">
-            <i class="fas fa-search"></i> <span>Search</span>
-          </button>
+          <%= form_with url: karts_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find your kart"
+            %>
+            <%= submit_tag "Search", class: "btn btn-outline-dark" %>
+          <% end %>
+
+
+
+
+
+
+
+          <%# <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-outline-dark"> %>
+            <%# <i class="fas fa-search"></i> <span>Search</span> %>
+          <%# </button> %>
         </div>
       </form>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav me-auto align-items-center">
+          <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", "/", class: "nav-link" %>
+          </li>
+          <%# <li class="nav-item">
+            <%= link_to "Messages", "#", class: "nav-link" %>
+          <%# </li>  %>
+          <li class="nav-item dropdown ms-2">
+            <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "profile", "/profile", class: "dropdown-item" %>
+              <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+         <% else %>
+          <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/users/sign_in">Login</a>
+          </li>
+        <% end %>
+
+
+
+
+
+
+
+
+
+
+<%#
+
             <li class="nav-item active">
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/users/sign_in">Login</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown"> %>
         </ul>
       </div>
     </div>

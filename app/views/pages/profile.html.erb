@@ -1,21 +1,28 @@
-<h2><%= @user.name %></h2>
-<%= image_tag @user.photo %>
+<div class="container mt-3">
+    <div class="d-flex justify-content-center align-items-center">
+      <% if @user.photo%>
+      <%= image_tag @user.photo %>
+      <% end %>
+      <h2><%= @user.name %></h2>
+    </div>
 
-
-<h2>All my bookings</h2>
+  <h2>All my bookings</h2>
 
 <div class="cards">
-  <% @bookings.each do |booking| %>
+  <% @bookings.order(created_at: :desc).each do |booking| %>
     <div class="card-trip">
       <%= image_tag booking.kart.image %>
       <div class="card-trip-infos">
         <div>
-          <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id) %></h2>
+          <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id), class:"link" %></h2>
           <p><%= booking.kart.special_skills%></p>
         </div>
-        <h2 class="card-trip-pricing"><%= booking.start_dates %></h2>
-        <h2><%= booking.end_dates %></h2>
+          <%= image_tag booking.kart.user.photo, class: "card-trip-user avatar-bordered" %>
+          <p class="card-trip-pricing">Start: <%= booking.start_dates.strftime("%d/%m/%y") %></p>
+          <p> End : <%= booking.end_dates.strftime("%d/%m/%y") %></p>
+          <p> Total price : <%= booking.kart.price %>€</p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

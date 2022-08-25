@@ -2,13 +2,16 @@
 
   <div class="container">
 
-    <div class="d-flex">
+    <div class="d-flex mt-5">
+      <h2><%= link_to "<",  karts_path, class:"link" %></h2>
       <div class="d-flex justify-content-center">
         <%= image_tag @kart.image, class: "image-show-kart" %>
+
       </div>
       <div class="flat-show-card">
 
         <h2>Book my new Kart 🤩 !</h2>
+
         <div class="price flex">
           <%= @kart.price %>€
         </div>
@@ -39,5 +42,9 @@
               <%= f.submit "Book" ,  class: "w-100 btn btn-dark mt-3" %>
               <% end %>
       </div>
+    </div>
+    <div>
+      <h2> <%= @kart.name %> </h2>
+      <p> Special Skills : <%= @kart.special_skills %> </p>
     </div>
   </div>
