@@ -11,8 +11,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.kart = @kart
     @booking.user = current_user
-
-    @booking.save!
     if @booking.save
       redirect_to profile_path
     end

@@ -21,6 +21,7 @@ class KartsController < ApplicationController
     @kart = Kart.new(kart_params)
     @kart.user = current_user
     if @kart.save
+      raise
       redirect_to karts_path(@kart)
     else
       render :new, status: :unprocessable_entity
