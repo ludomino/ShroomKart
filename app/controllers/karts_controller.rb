@@ -4,7 +4,7 @@ class KartsController < ApplicationController
     if params[:query].present?
       @karts = Kart.global_search(params[:query])
     else
-      @karts = Kart.all
+      @karts = Kart.all.reverse
     end
     @user = current_user
   end

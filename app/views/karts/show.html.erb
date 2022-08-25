@@ -5,7 +5,7 @@
     <div class="d-flex mt-5">
       <h2><%= link_to "<",  karts_path, class:"link" %></h2>
       <div class="d-flex justify-content-center">
-        <%= image_tag @kart.image, class: "image-show-kart" %>
+        <%= cl_image_tag @kart.image.key, class: "image-show-kart" %>
 
       </div>
       <div class="flat-show-card">
