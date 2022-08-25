@@ -15,6 +15,7 @@ class KartsController < ApplicationController
 
   def create
     @kart = Kart.new(kart_params)
+    @kart.user = current_user
     if @kart.save
       redirect_to karts_path(@kart)
     else
