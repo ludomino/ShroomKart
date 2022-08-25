@@ -1,7 +1,11 @@
 class KartsController < ApplicationController
   before_action :set_kart, only: [:show, :destroy]
   def index
-    @karts = Kart.all
+    if params[:query].present?
+      @karts = Kart.global_search(params[:query])
+    else
+      @karts = Kart.all
+    end
     @user = current_user
   end
 
