@@ -9,14 +9,15 @@
   <div class="cards">
     <% @karts.each do |kart| %>
       <div class="card-trip">
-        <%= image_tag kart.image %>
+        <%#= image_tag kart.image %>
+        <%= cl_image_tag kart.image.key %>
         <div class="card-trip-infos">
-        <div>
-          <h2><%= link_to kart.name, kart_path(kart), class:"link" %></h2>
-          <p><%= kart.special_skills%></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= kart.price %> €</h2>
-        <%= image_tag kart.user.photo, class: "card-trip-user avatar-bordered" %>
+          <div>
+            <h2><%= link_to kart.name, kart_path(kart), class:"link" %></h2>
+            <p><%= kart.special_skills%></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= kart.price %> €</h2>
+          <%= image_tag kart.user.photo, class: "card-trip-user avatar-bordered" %>
         </div>
       </div>
     <% end %>
