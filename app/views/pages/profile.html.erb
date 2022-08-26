@@ -12,6 +12,21 @@
   <% @bookings.order(created_at: :desc).each do |booking| %>
     <div class="card-trip">
       <%= image_tag booking.kart.image %>
+        <div class="delete">
+        <% if current_user == @user %>
+          <a href="#" class="btn btn-primary a-btn-slide-text">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <span><strong>Edit</strong></span>
+          </a>
+
+            <%= link_to "Delete", booking_path(booking),
+            class:'btn btn-primary a-btn-slide-text',
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+            <% elsif current_user == @booking.kart.user %>
+            <%= link_to "Cancel the booking", booking_path(@booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <% end %>
+        </div>
       <div class="card-trip-infos">
         <div>
           <h2><%= link_to booking.kart.name,  kart_bookings_path(:kart_id), class:"link" %></h2>

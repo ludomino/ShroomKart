@@ -16,6 +16,28 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    set_booking
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking), notice: 'Booking was successfully updated.'
+    else
+      render :edit
+    end
+    authorize @booking
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, notice: 'Booking was successfully deleted.'
+    authorize @booking
+  end
+
   private
 
   def booking_params

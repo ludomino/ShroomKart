@@ -1,0 +1,13 @@
+.delete {
+  // Position: absolute;
+  Top: 15px;
+  Left: 15px;
+}
+
+a.btn:hover {
+  transform: scale(1.1);
+}
+a.btn {
+  transform: scale(0.8);
+  transition-duration: 0.5s;
+}

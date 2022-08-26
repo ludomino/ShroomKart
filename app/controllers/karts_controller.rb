@@ -4,7 +4,7 @@ class KartsController < ApplicationController
     if params[:query].present?
       @karts = Kart.global_search(params[:query])
     else
-      @karts = Kart.all.reverse
+      @karts = Kart.all
     end
     @user = current_user
   end
@@ -21,7 +21,6 @@ class KartsController < ApplicationController
     @kart = Kart.new(kart_params)
     @kart.user = current_user
     if @kart.save
-      raise
       redirect_to karts_path(@kart)
     else
       render :new, status: :unprocessable_entity
