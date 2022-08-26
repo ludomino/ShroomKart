@@ -1,50 +1,51 @@
  <link rel="stylesheet" href="_show.scss" />
 
-  <div class="container px-5">
+  <div class="containershow px-5">
 
     <div class="d-flex mt-5">
       <h2><%= link_to "<",  karts_path, class:"link" %></h2>
-      <div class="d-flex justify-content-center" class="row" class="col-sm-6">
+      <div class="img-bg d-flex justify-content-center ms-4 me-4 mb-3 pt-3 pb-3" class="row" class="col-sm-6">
         <%= cl_image_tag @kart.image.key, class: "image-show-kart" %>
-
       </div>
-      <div class="flat-show-card" >
 
-        <h2>Book my crazy Kart 🤩 !</h2>
+      <div class="reservation flat-show-card ms-4 me-4 mb-3 pt-3 pb-3" >
+        <div class="m-3">
+          <h2>Book my crazy Kart 🤩 !</h2>
 
-        <div class="price flex" >
-          <%= @kart.price %>€
-        </div>
-        <%= simple_form_for [@kart, @booking],
-                            html: {
+          <div class="price flex" >
+            <%= @kart.price %>€
+          </div>
+          <%= simple_form_for [@kart, @booking],
+                              html: {
+                                data: {
+                                  controller: 'flatpickr'
+                                }
+                              } do |f| %>
+            <%=  f.input :start_dates,
+                          as: :string,
+                          input_html: {
+                            data:
+                            {
+                                flatpickr_target: 'start_dates',
+                            }
+                          } %>
+            <%=  f.input :end_dates,
+                          as: :string,
+                          wrapper_html: { class: 'd-none' },
+                          input_html: {
                               data: {
-                                controller: 'flatpickr'
-                              }
-                            } do |f| %>
-          <%=  f.input :start_dates,
-                        as: :string,
-                        input_html: {
-                          data:
-                           {
-                              flatpickr_target: 'start_dates',
+                                flatpickr_target: 'end_dates'
                           }
                         } %>
-          <%=  f.input :end_dates,
-                        as: :string,
-                        wrapper_html: { class: 'd-none' },
-                        input_html: {
-                            data: {
-                              flatpickr_target: 'end_dates'
-                        }
-                      } %>
-          <label for="story">Book message:</label>
-          <textarea id="story" name="story">
-            </textarea>
-              <%= f.submit "Book" ,  class: "w-100 btn btn-dark mt-3" %>
-              <% end %>
+            <label for="story">Book message:</label>
+            <textarea id="story" name="story">
+              </textarea>
+                <%= f.submit "Book" ,  class: "w-100 btn btn-dark mt-3" %>
+                <% end %>
+        </div>
       </div>
     </div>
-    <div class= "info" class="row" class="col-sm-3">
+    <div class= "info ms-5 mt-4 ps-3 pt-2 pb-2" class="row" class="col-sm-3">
       <h2> <%= @kart.name %> </h2>
       <p> Special Skills : <%= @kart.special_skills %> </p>
     </div>
