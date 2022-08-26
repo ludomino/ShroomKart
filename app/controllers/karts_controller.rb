@@ -1,5 +1,5 @@
 class KartsController < ApplicationController
-  before_action :set_kart, only: [:show, :destroy]
+  before_action :set_kart, only: [:show, :create, :destroy]
   def index
     if params[:query].present?
       @karts = Kart.global_search(params[:query])

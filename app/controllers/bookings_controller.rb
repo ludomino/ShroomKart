@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: :destroy
+  before_action :set_booking, only: [:confirm, :refuse ]
 
   def show
     @kart = Kart.find(params[:id])
@@ -18,7 +18,21 @@ class BookingsController < ApplicationController
     end
   end
 
-  private
+  # def confirm
+  #   @booking.update(satus: "accepted")
+  #   redirect_to profile_path
+  # end
+
+  # def refuse
+  #   @booking.update(satus: "canceled")
+  #   redirect_to profile_path
+  # end
+
+  # private
+
+  # def set_booking
+  #   @set_booking = Booking.find(params[:id])
+  # end
 
   def booking_params
     params.require(:booking).permit(:start_dates, :end_dates)
