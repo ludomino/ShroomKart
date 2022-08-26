@@ -1,5 +1,7 @@
 class KartsController < ApplicationController
-  before_action :set_kart, only: [:show, :create, :destroy]
+  before_action :set_kart, only: [:show, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params[:query].present?
       @karts = Kart.global_search(params[:query])
