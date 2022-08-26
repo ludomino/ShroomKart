@@ -5,6 +5,8 @@
   src: url('https://fonts.cdnfonts.com/s/32226/New Super Mario Font U.woff') format('woff');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&family=Rubik&display=swap');
 
 h1 {
   font-family: 'superfont';
@@ -29,7 +31,7 @@ h1:hover{
 .main {
   font-family: 'superfont';
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(https://media.timeout.com/images/105667610/image.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(https://img-4.linternaute.com/OWOEJcc_y-HkaSp0s5FQ8vuG5YE=/1500x/smart/b0e1d722f29c49eda900c0348194e63e/ccmcms-linternaute/36455032.jpg);
   // opacity: 0.7;
   // width: 90%;
   height: 400px;
@@ -54,6 +56,8 @@ h1:hover{
   left: 15px;
 
 }
+
+
 .main p {
   font-size: 20px;
   text-shadow: 0px 5px 6px #030303;
@@ -88,6 +92,7 @@ h1:hover{
   object-fit: cover;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  width: 140px;
 
 
 }
@@ -101,8 +106,8 @@ h1:hover{
 }
 
 .info-text {
-  font-family: 'superfont';
-  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 
 }
 
@@ -111,3 +116,9 @@ h1:hover{
   font-size: 25px;
 
 }
+
+.container {
+  width: 85%;
+}
+
+
